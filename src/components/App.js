@@ -5,12 +5,17 @@ import "../styles/App.css";
 class App extends React.Component {
   handleClick() {
     this.setState({ count: this.state.count + 1 });
-    console.log("mounted");
   }
+
   constructor(props) {
     super(props);
     this.state = { count: 0 };
     this.handleClick = this.handleClick.bind(this);
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      console.log("mounted");
+    }, 1000);
   }
 
   render() {
